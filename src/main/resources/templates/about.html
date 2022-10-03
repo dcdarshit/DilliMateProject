@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+  <head>
+    <link
+      rel="stylesheet"
+      type = "text/css"
+      th:href="@{https://fonts.googleapis.com/css?family=Poppins}"
+    />
+    <link 
+      rel="stylesheet" 
+      type="text/css" 
+      th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+    />
+    <link rel="stylesheet" type = "text/css" th:href="@{/css/about.css}" />
+    <link rel="stylesheet" type = "text/css" th:href="@{/css/base.css}" />
+    <link rel = "stylesheet" type = "text/css" th:href= "@{/css/header.css}"/>
+    <link rel="stylesheet" type = "text/css" th:href="@{/css/footer.css}" /> 
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header id="main-header" th:insert = "header::header1"></header>
+
+    <!-- ABOUT BODY -->
+    <section id="about-main">
+    
+      <!-- ABOUT MAIN TOP -->
+      <div class="about-main-top">
+      
+        <!-- ABOUT MAIN TOP LEFT-->
+        <div class="about-main-top-left">
+        
+          <div class="about-main-top-left-heading">
+            Hi ! We're from DilliMate.
+          </div>
+          <div class="horizontal-line"></div>
+          <div class="about-main-top-left-subheading">
+            Lorem ipsum is a placeholder text commonly used to demonstrate the
+            visual form of a document or a typeface without relying on
+            meaningful content.
+          </div>
+        </div>
+        <!-- ABOUT MAIN TOP RIGHT -->
+        <div class="about-main-top-right">
+          <img th:src="@{/img/group.jpg}" class="about-main-top-right-img" />
+        </div>
+      </div>
+      <!-- ABOUT MAIN MIDDLE -->
+      <div class="about-main-middle">
+        <div class="about-main-middle-content">
+          <div class="about-main-middle-content-heading">
+            We're more than the tour and travel agency.
+          </div>
+          <div class="about-main-middle-content-subheading">
+            Lorem ipsum is a placeholder text commonly used to demonstrate the
+            visual form of a document or a typeface without relying on
+            meaningful content. Lorem ipsum may be used as a placeholder before
+            final copy is available. It is also used to temporarily replace text
+            in a process called greeking, which allows designers to consider the
+            form of a webpage or publication, without the meaning of the text
+            influencing the design.
+          </div>
+        </div>
+      </div>
+      <!-- ABOUT MAIN BOTTOM -->
+      <div class="about-main-bottom">
+        <div class="about-main-bottom-row">
+          <img th:src="@{/img/pic1.jpg}" />
+          <img th:src="@{/img/pic2.jpg}" />
+          <img th:src="@{/img/pic3.jpg}" />
+          <img th:src="@{/img/pic4.jpg}" />
+        </div>
+        <div class="about-main-bottom-row">
+          <img th:src="@{/img/pic5.jpg}" />
+          <img th:src="@{/img/pic6.jpg}" />
+          <img th:src="@{/img/pic9.jpg}" />
+          <img th:src="@{/img/pic8.jpg}" />
+        </div>
+        <div class="about-main-bottom-row">
+          <img th:src="@{/img/pic10.jpg}" />
+          <img th:src="@{/img/pic11.jpg}" />
+          <img th:src="@{/img/pic12.jpg}" />
+          <img th:src="@{/img/pic13.jpg}" />
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id = "main-footer" th:insert = "footer::footer1"></footer>
+ 
+    <!-- JAVASCRIPT FILES -->
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+    
+  </body>
+</html>

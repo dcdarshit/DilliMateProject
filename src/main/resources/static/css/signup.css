@@ -1,0 +1,19 @@
+.signup-main-item {
+    /* height: 500px; */
+    height: 650px;
+    width: 100%;
+}
+
+.signup-content { 
+    text-align: center;
+}
+
+.signup-content h1 {
+   /* padding-top: 50px;*/
+   padding-top: 10px;
+}
+
+.tab-center {
+   padding-left: 180px;
+   width: 880px;
+}

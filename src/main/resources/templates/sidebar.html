@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+  <title>Dashboard Sidebar</title>
+</head>
+<body>
+  <div th:fragment="sidebar1">
+    <div class = "sidebar-links">
+       <div class = "sidebar-links-item location-types">
+         <a>Location</a>
+       </div>
+       <div class = "sidebar-links-sub-item location-category">
+          <a th:href="@{${'/dashboard/show/museumList/' + role + '/' + id}}">Museum</a>
+          <a th:href="@{${'/dashboard/show/monumentList/' + role + '/' + id}}">Monument</a>
+       </div>
+       <div class = "sidebar-links-item food-types">
+         <a>Food</a> 
+       </div>
+       <div class = "sidebar-links-sub-item food-category">
+          <a th:href="@{${'/dashboard/show/cafeList/' + role + '/' + id}}">Cafe</a>
+          <a th:href="@{${'/dashboard/show/restaurantList/' + role + '/' + id}}">Restaurant</a>
+       </div>
+       <div class = "sidebar-links-item">
+          <a th:href = "@{${'/dashboard/show/hotelList/' + role + '/' + id}}">Hotel</a>
+       </div>
+       <div class = "sidebar-links-item">
+          <a th:href = "@{${'/dashboard/show/clinicList/' + role + '/' + id}}">Health</a>
+       </div>
+       <div class = "sidebar-links-item">
+          <a th:href = "@{${'/dashboard/show/cabList/' + role + '/' + id}}">Cab</a>
+       </div>
+       <div class = "sidebar-links-item">
+          <a th:href = "@{${'/dashboard/show/guideList/' + role + '/' + id}}">Guide</a>
+       </div>
+     </div>
+  </div>
+</body>
+</div>

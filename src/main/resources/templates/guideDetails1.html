@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+    <head>
+        <link
+           rel="stylesheet"
+           th:href="@{https://fonts.googleapis.com/css?family=Poppins}"
+        />
+        <link 
+           rel="stylesheet" 
+           type="text/css" 
+           th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+        />
+        <link rel="stylesheet" type="text/css" th:href= "@{/css/dashboard.css}" />
+        <link rel="stylesheet" type="text/css" th:href= "@{/css/header.css}"/>
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header id = "main-header" th:insert="dashboardHeader::header2"></header>
+
+        <!-- BODY -->
+        <section id = "main-body-content">
+           
+           <!-- DASHBOARD SIDEBAR -->
+           <div class = "grid-item main-body-left-panel">
+             <div class = "user-profile">
+               <img th:src="@{${'/profile/display/' + id}}" class = "profile-pic"/>
+               <!--<img th:src = "@{/img/profilePic.jpg}" class = "profile-pic"/>-->
+             </div>
+             
+             <div class = "user-profile-name">
+                <span sec:authentication="principal.username">Johnson Stuwart</span></div>
+             <!-- <div class = "user-profile-address">johnstuwart@gmail.com</div>-->
+           </div>
+           
+           <div class = "grid-item main-body-right-panel">
+             <h1 class = "right-panel-heading">User Dashboard</h1><hr>
+             
+             <div class = "welcome-page">
+             
+               <h2 align = "center">Tourist Guide Details</h2>
+               <div class = "details-margin">
+                 <div class = "row">
+                   <img th:src="@{${'/guide/display/' + guide.guideId}}" 
+                        height = "200" width = "200" style = "border:1px solid #ccc"/>
+                 </div>
+                 
+                 <table class="table table-bordered">
+                  <tr>
+                    <td><b>Tourist Guide Id</b></td> 
+                    <td th:text = "${guide.guideId}">001</td>                   
+                  </tr>
+                  <tr>
+                    <td><b>Tourist Guide Name</b></td> 
+                    <td th:text = "${guide.guideName}">Chitra</td>                   
+                  </tr>
+                  <tr>
+                    <td><b>Phone Number</b></td> 
+                    <td th:text = "${guide.phoneNo}">7979868778</td>                   
+                  </tr>
+                  <tr>
+                    <td><b>Language Preference</b></td> 
+                    <td th:text = "${guide.langPreference}">English</td>                   
+                  </tr>
+                  <tr>
+                    <td><b>Charge Per Hour</b></td> 
+                    <td th:text = "${guide.chargePerHour}">89.0</td>                   
+                  </tr>
+                  <tr>
+                    <td><b>Rating</b></td> 
+                    <td th:text = "${guide.rating}">5.0</td>                   
+                  </tr>
+                 </table>
+               </div>
+               
+               <div class = "add-new-btn">
+                 <a th:href= "@{${'/dashboard/show/guideList/' + role + '/' + id}}" 
+                    class="btn btn-primary add-new-museum">
+                    Back
+                 </a>
+               </div>
+              
+             </div>             
+           </div>  
+           
+        </section>
+
+        <!-- FOOTER -->
+        <footer id = "main-footer"></footer>
+        
+        <!-- JAVASCRIPT FILES -->
+        <script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+        <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>       
+
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+    <head>
+      <link
+        rel="stylesheet"
+        th:href="@{https://fonts.googleapis.com/css?family=Poppins}"
+      />  
+      <link 
+        rel="stylesheet" 
+        th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}" 
+      />
+      <link 
+        rel="stylesheet" 
+        type="text/css" 
+        th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+      />
+      <link rel = "stylesheet" type = "text/css" th:href="@{/css/index.css}"/> 
+      <link rel = "stylesheet" type = "text/css" th:href= "@{/css/header.css}"/> 
+      <link rel = "stylesheet" type = "text/css" th:href = "@{/css/slider.css}"/> 
+      <link rel = "stylesheet" type = "text/css" th:href = "@{/css/carousel.css}" />
+      <link rel="stylesheet" type = "text/css" th:href="@{/css/footer.css}" />  
+    </head>
+    <body>
+       
+        <!-- HEADER -->
+        <header id = "main-header" th:insert = "header::header1"></header>
+
+        <!-- MAIN BODY -->
+        <section id = "main-body">
+          <div id = "slider-container" th:insert = "slider::slider1"></div>
+
+          <div class = "main-body-content">
+             <div class = "main-body-content-heading">
+                your journey starts here <br/>
+                where do you want to go
+             </div>
+             <div class = "main-body-content-details">
+              Welcome to <i>Dilliwalo ki Dilli</i>. Let's start your journey with <i>Dillimate</i>.
+              Here, you don't need to worry about where & how explore the new place. Dillimate 
+              provide you all the necessary information at one platform just by creating your
+              account.
+              You are one click away from all the fun that the Delhi has to offer. Our website 
+              provides an eye catching tourist spots, mouth watering food places, comfort staying 
+              location, emergency medical contacts along with tourist guide & Cab services.
+              Hurry up and make dillimate your travel lovely for your memorable journey. 
+             </div>     
+          </div>
+          
+          <div id = "carousel-container" th:insert = "carousel::carousel1"></div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer id = "main-footer" th:insert = "footer::footer1"></footer>
+
+        <!-- SCRIPT FILES -->
+        <script type = "text/javascript" th:src="@{/js/jquery.js}"></script>
+        <script type = "text/javascript" th:src = "@{/js/slider.js}"></script>
+
+    </body>
+</html>    

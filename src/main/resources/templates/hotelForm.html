@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+ <head>
+   <title>Hotel Details Form</title>
+   <link
+     rel="stylesheet"
+     th:href="@{https://fonts.googleapis.com/css?family=Poppins}"
+   />
+   <link 
+     rel="stylesheet" 
+     type="text/css" 
+     th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+   />
+   <link rel="stylesheet" type="text/css" th:href= "@{/css/dashboard.css}" />
+   <link rel="stylesheet" type="text/css" th:href= "@{/css/header.css}"/>
+ </head>
+ <body>
+       <!-- HEADER -->
+       <header id = "main-header">
+          <div class="header-container">
+          
+             <!-- HEADER HEADING -->
+             <div class = "grid-item">
+               <img th:src = "@{/img/logo.png}" class = "main-logo">
+             </div>
+             
+             <div class="heading grid-item">Dillimate</div>
+             <div class="admin-dashboard-header-links grid-item">
+                <a th:href = "@{/logout}">Logout</a>           
+             </div>
+             
+          </div>
+        </header>
+
+        <!-- BODY -->
+        <section id = "main-body-content">
+           
+           <!-- DASHBOARD SIDEBAR -->
+           <div class = "grid-item sidebar-left-panel">
+             <div class = "user-profile">
+               <img th:src = "@{/img/profilePic.jpg}" class = "profile-pic"/>
+             </div>
+             
+             <div class = "user-profile-name">
+               <!-- <span sec:authentication="principal.username">Johnson Stuwart</span>-->
+             </div>
+             
+             <div th:insert = "sidebar::sidebar1"></div>
+             
+           </div>
+           
+           <div class = "grid-item sidebar-right-panel">
+             <h1 class = "right-panel-heading">Admin Dashboard</h1><hr>
+             
+             <div class = "main-container">  
+               <h2 align = "center">Add New Hotel Details</h2>      
+               <div class = "museum-form-container">
+      
+               <form th:action = "@{${'/add/hotel/' + role + '/' + id}}" th:object = "${hotel}" 
+                     method = "post" enctype="multipart/form-data">
+                 <p class="error-message" 
+                    th:if="${#fields.hasGlobalErrors()}" 
+                    th:each="error : ${#fields.errors('global')}" 
+                    th:text="${error}">Validation error</p> 
+             
+                 <div class="form-group" 
+                    th:classappend="${#fields.hasErrors('hotelName')}? 'has-error':''">
+                    <label for="name">Hotel Name : </label>
+                    <input 
+                     type="text"
+                     id="hotelName"
+                     name="hotelName"
+                     class="form-control"
+                     th:field="*{hotelName}"  
+                     placeholder="Enter hotel name"/>
+                    <p class="error-message" 
+                       th:each="error: ${#fields.errors('hotelName')}" th:text="${error}">
+                     Validation error
+                    </p>
+                 </div>
+                 
+                 <div class="form-group" 
+                      th:classappend="${#fields.hasErrors('about')}? 'has-error':''">
+                    <label for="name">About : </label>
+                    <textarea 
+                     class="form-control rounded-0" 
+                     id="about"
+                     name="about"
+                     th:field= "*{about}" 
+                     placeholder="Enter about hotel"
+                     rows="2">
+                    </textarea>
+                    <p class="error-message" 
+                       th:each="error: ${#fields.errors('about')}" th:text="${error}">
+                     Validation error
+                    </p>
+                 </div> 
+          
+                 <div class="form-group" 
+                      th:classappend="${#fields.hasErrors('address')}? 'has-error':''">
+                    <label for="name">Address : </label>
+                    <textarea 
+                     class="form-control rounded-0" 
+                     id="address"
+                     name="address"
+                     th:field= "*{address}" 
+                     placeholder="Enter the hotel address"
+                     rows="2">
+                    </textarea>
+                    <p class="error-message" 
+                       th:each="error: ${#fields.errors('address')}" th:text="${error}">
+                      Validation error
+                    </p>
+                 </div>
+                 
+                  <div class="form-group" 
+                      th:classappend="${#fields.hasErrors('services')}? 'has-error':''">
+                    <label for="name">Services : </label>
+                    <textarea 
+                     class="form-control rounded-0" 
+                     id="services"
+                     name="services"
+                     th:field= "*{services}" 
+                     placeholder="Enter the services"
+                     rows="2">
+                    </textarea>
+                    <p class="error-message" 
+                       th:each="error: ${#fields.errors('services')}" th:text="${error}">
+                      Validation error
+                    </p>
+                 </div>
+                 
+                 <div class="form-group" 
+                      th:classappend="${#fields.hasErrors('room')}? 'has-error':''">
+                    <label for="name">Rooms : </label>
+                    <input 
+                     type = "number"
+                     class="form-control" 
+                     id="room"
+                     name="room"
+                     th:field= "*{room}" 
+                     placeholder="Enter the number of rooms" />
+                    <p class="error-message" 
+                       th:each="error: ${#fields.errors('room')}" th:text="${error}">
+                      Validation error
+                    </p>
+                 </div>
+                    
+                 <div class="form-group" 
+                      th:classappend="${#fields.hasErrors('phoneNo')}? 'has-error':''">
+                  <label for="name">Phone Number : </label>
+                  <input 
+                   type="text" 
+                   class="form-control"
+                   id="phoneNo" 
+                   name="phoneNo" 
+                   th:field="*{phoneNo}"
+                   placeholder= "Enter the phone no."/>
+                  <p class="error-message" 
+                     th:each="error: ${#fields.errors('phoneNo')}" th:text="${error}">
+                    Validation error
+                  </p>
+                </div> 
+                
+                <div class="form-group" 
+                      th:classappend="${#fields.hasErrors('price')}? 'has-error':''">
+                  <label for="name">Price : </label>
+                  <input 
+                   type="number" 
+                   class="form-control"
+                   id="price" 
+                   name="price" 
+                   th:field="*{price}" />
+                  <p class="error-message" 
+                     th:each="error: ${#fields.errors('price')}" th:text="${error}">
+                    Validation error
+                  </p>
+                </div>
+                
+                <div class="form-group" 
+                      th:classappend="${#fields.hasErrors('rating')}? 'has-error':''">
+                  <label for="name">Rating : </label>
+                  <input 
+                   type="number" 
+                   class="form-control"
+                   id="rating" 
+                   name="rating" 
+                   th:field="*{rating}" />
+                  <p class="error-message" 
+                     th:each="error: ${#fields.errors('rating')}" th:text="${error}">
+                    Validation error
+                  </p>
+                </div>
+                
+                <div class="form-group" 
+                      th:classappend="${#fields.hasErrors('hotelPic1')}? 'has-error':''">
+                  <label for="name">Hotel image 1 : </label>
+                  <input 
+                   type="file" 
+                   class="form-control"
+                   id="hotelPic1" 
+                   name="hotelPic1" 
+                   th:field="*{hotelPic1}" 
+                   accept="image/png, image/jpeg"/>
+                  <p class="error-message" 
+                     th:each="error: ${#fields.errors('hotelPic1')}" th:text="${error}">
+                    Validation error
+                  </p>
+                </div> 
+                
+                <div class="form-group" 
+                      th:classappend="${#fields.hasErrors('hotelPic2')}? 'has-error':''">
+                  <label for="name">Hotel image 2 : </label>
+                  <input 
+                   type="file" 
+                   class="form-control"
+                   id="hotelPic2" 
+                   name="hotelPic2" 
+                   th:field="*{hotelPic2}" 
+                   accept="image/png, image/jpeg"/>
+                  <p class="error-message" 
+                     th:each="error: ${#fields.errors('hotelPic2')}" th:text="${error}">
+                    Validation error
+                  </p>
+                </div>
+                
+                <div class="form-group" 
+                      th:classappend="${#fields.hasErrors('hotelPic3')}? 'has-error':''">
+                  <label for="name">Hotel image 3 : </label>
+                  <input 
+                   type="file" 
+                   class="form-control"
+                   id="hotelPic3" 
+                   name="hotelPic3" 
+                   th:field="*{hotelPic3}" 
+                   accept="image/png, image/jpeg"/>
+                  <p class="error-message" 
+                     th:each="error: ${#fields.errors('hotelPic3')}" th:text="${error}">
+                    Validation error
+                  </p>
+                </div>
+                
+                <div class="form-group" 
+                      th:classappend="${#fields.hasErrors('hotelPic4')}? 'has-error':''">
+                  <label for="name">Hotel image 4 : </label>
+                  <input 
+                   type="file" 
+                   class="form-control"
+                   id="hotelPic4" 
+                   name="hotelPic4" 
+                   th:field="*{hotelPic4}" 
+                   accept="image/png, image/jpeg"/>
+                  <p class="error-message" 
+                     th:each="error: ${#fields.errors('hotelPic4')}" th:text="${error}">
+                    Validation error
+                  </p>
+                </div>
+                
+                <div class="form-group" 
+                      th:classappend="${#fields.hasErrors('hotelPic5')}? 'has-error':''">
+                  <label for="name">Hotel image 5 : </label>
+                  <input 
+                   type="file" 
+                   class="form-control"
+                   id="hotelPic5" 
+                   name="hotelPic5" 
+                   th:field="*{hotelPic5}" 
+                   accept="image/png, image/jpeg"/>
+                  <p class="error-message" 
+                     th:each="error: ${#fields.errors('hotelPic5')}" th:text="${error}">
+                    Validation error
+                  </p>
+                </div>
+                
+                <div class="form-group" 
+                      th:classappend="${#fields.hasErrors('hotelPic6')}? 'has-error':''">
+                  <label for="name">Hotel image 6 : </label>
+                  <input 
+                   type="file" 
+                   class="form-control"
+                   id="hotelPic6" 
+                   name="hotelPic6" 
+                   th:field="*{hotelPic6}" 
+                   accept="image/png, image/jpeg"/>
+                  <p class="error-message" 
+                     th:each="error: ${#fields.errors('hotelPic6')}" th:text="${error}">
+                    Validation error
+                  </p>
+                </div>
+          
+               <div style = "float:right">
+                  <button type = "submit" class = "btn btn-danger">Submit</button>
+               </div>         
+             </form>
+            </div>
+           </div>      
+             
+         </div>             
+        </section>
+
+        <!-- FOOTER -->
+        <footer id = "main-footer"></footer>
+        
+        <!-- JAVASCRIPT FILES -->
+        <script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+        <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script> 
+        <script type = "text/javascript" th:src="@{/js/adminDashboard.js}"></script>
+             
+  </body>
+</html>

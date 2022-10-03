@@ -1,0 +1,62 @@
+body {
+    font-family: Poppins;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+.row{
+    margin-top: 20px;
+}
+
+.row input {
+  width: 50%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.row input::placeholder{
+    font-size: 18px;
+}
+
+.row textarea {
+    width: 50%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    height: 100px;
+}
+
+.row textarea::placeholder{
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.submit-button{
+    margin-top:20px;
+}
+
+#submitForm {
+    padding: 12px;
+    width: 55%;
+    border-radius: 18px;
+    border: 1px solid #ccc;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 550;
+    font-style: normal;
+    background: linear-gradient(to right, orange, orangered);
+}
+
+.new-user {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.new-user-signup {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}

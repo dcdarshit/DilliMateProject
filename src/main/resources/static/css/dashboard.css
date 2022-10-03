@@ -1,0 +1,215 @@
+body {
+    font-family: Poppins;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+#main-body-content {
+	display: grid;
+	grid-template-columns: 25% 75%;
+}
+
+.main-body-left-panel {
+	height: 535px;
+	width: 100%;
+	background: linear-gradient(to right, #2a2059, #1c068c);
+}
+
+.user-profile {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;	
+}
+
+.user-profile-name {
+	margin-top: 10px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 500;
+	color: #fff;
+}
+
+.user-profile-address {
+	margin-top: 5px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 500;
+	color: #fff;
+}
+
+.right-panel-heading {
+	padding-left: 10px;
+}
+
+.welcome-page {
+	text-align: center;
+}
+
+.welcome-page-pic {
+	height: 350px;
+	width: 350px
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+  margin-top: 20px;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+th, td {
+  text-align: center;
+  padding: 5px;
+}
+
+// tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #000;
+  color: white;
+}
+
+.table-margins {
+  margin: 20px;
+}
+
+.add-new-btn {
+  margin: 20px;
+}
+
+#outer-box {
+  margin-left: 30%;
+}
+
+.dialog-box {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 400px; 
+  height: 200px;
+  box-shadow: 5px 5px 5px 5px #eee;	
+}
+
+.dialog-box-btns {
+  margin-top: 40px;
+  text-align: center;
+}
+
+#museum-btn {
+	height: 34px;
+	width: 120px;
+	border: 1px solid #a6031c;
+	border-radius: 5px;
+	background-color: #a6031c;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+#museum-btn:hover {
+	border: 1px solid #f7f423;
+	background-color: #f7f423;
+	color: #000;
+}
+
+#monument-btn {
+	height: 34px;
+	width: 120px;
+	border: 1px solid #0d6934;
+	border-radius: 5px;
+	background-color: #0d6934;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+	margin-left: 10px;
+}
+
+#monument-btn:hover {
+   border: 1px solid #f7f423;
+   background-color: #f7f423;
+   color: #000;	
+}
+
+.sidebar-left-panel {
+   height: 790px;
+   width: 100%;
+  // background: linear-gradient(to right, #2a2059, #1c068c);
+   background: linear-gradient(to right, #6e0202, #b33636);
+}
+
+.sidebar-links {
+    margin-top: 30px;   
+ }
+ 
+.sidebar-links-item a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    padding: 15px 40px;
+    width: 100%;
+ }
+ 
+ .sidebar-links-item a:hover {
+    background-color: #666; 
+    width: 100%;
+ }
+ 
+.sidebar-active-links {
+    background-color: #000; 
+    width: 100%;
+} 
+ 
+.sidebar-links-sub-item {
+    background-color: #ccc;
+}
+ 
+.sidebar-links-sub-item a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    padding: 15px 0px 15px 60px;
+    width: 100%;
+ } 
+ 
+.sidebar-links-sub-item a:hover {
+    background-color: #666;
+    color: #fff;
+    font-weight: 500;
+    width: 100%;
+ }
+ 
+ .sidebar-active-sub-links {
+    background-color: #666;
+    color: #fff;
+    font-weight: 500;
+    width: 100%;
+ }
+ 
+ .location-category {
+    display:none;
+ }
+ 
+ .food-category {
+    display:none;
+ }
+ 
+ .museum-form-container {
+   margin: 50px;
+ }
+ 
+ .details-margin {
+   margin: 10px 100px 0px 100px;
+ }
+ 

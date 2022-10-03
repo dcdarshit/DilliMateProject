@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      th:href="@{https://fonts.googleapis.com/css?family=Poppins}"
+    />
+    <link 
+      rel="stylesheet" 
+      type="text/css" 
+      th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+    />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/base.css}" />
+    <link rel="stylesheet" type="text/css" th:href= "@{/css/header.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header id="main-header" th:insert="header::header1"></header>
+
+    <!-- LOGIN BODY -->
+    <section id="login-main">
+      <div class="login-main-item login-welcome">
+        <div class="login-welcome-heading">Welcome Back</div>
+        <div class="login-welcome-sub-heading">
+          Login to your account to get started
+        </div>
+      </div>
+      <div class="login-main-item login-content">
+        <div th:if="${param.logout}">
+           <div class="alert alert-info">You have been logged out.</div>
+        </div>
+        
+        <!-- LOGIN HEADING -->
+        <h1>Login using Email</h1>
+        
+        <!-- LOGIN FORM -->
+        <div class="login-form">
+          <form th:action="@{/login}" method = "post">
+            <div th:if="${param.error}">
+              <div class="alert alert-danger">Invalid username or password.</div>
+            </div>          
+            <div class="row">
+              <input
+                type="email"
+                placeholder="Username"
+                id="username"
+                name="username"
+              />
+            </div>
+            <div class="row">
+              <input
+                type="password"
+                placeholder="Password"
+                id="password"
+                name="password"
+              />
+            </div>
+            <div class="row submit-button">
+              <button type="submit" id="submitForm">Submit</button>
+            </div>
+          </form>
+          <div class="new-user">
+            Don't have an account ?
+            <a th:href="@{/signup}" class="new-user-signup">Sign up</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGIN FOOTER -->
+    <footer id = "main-footer" th:insert="footer::footer1"></footer>
+ 
+    <!-- JAVASCRIPT FILES -->   
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+ 
+  </body>
+</html>

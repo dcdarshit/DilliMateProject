@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+  <head>
+   <title>footer</title>
+  </head>
+  <body>
+    <div class="main-footer" th:fragment="footer1">
+
+      <div class = "main-footer-body">
+       <!-- FOOTER TOP PART --> 
+      <div class="main-footer-top">
+        <div class="main-footer-col1 grid-item">
+          <div class="main-footer-col1-heading">
+            <span class = "grid-item">
+              <img th:src= "@{/img/logo.png}" class = "main-footer-logo" />
+            </span>
+            <span class = "grid-item">DilliMate</span>
+          </div>
+          <div class="main-footer-col1-about">
+            <div class="main-footer-col1-about-heading">About Us</div>
+            <div class="main-footer-col1-about-content">
+              We want to help people by providing the services and it makes
+              their travelling easy and smooth.
+            </div>
+          </div>
+          <div class="main-footer-col1-contact">
+            <div class="main-footer-col1-contact-heading">Contact Us</div>
+            <div class="main-footer-col1-contact-content">
+               <div class = "main-footer-col1-contact-content-row">
+                   <span class= "main-footer-col1-contact-content-icon">
+                     <i class="fa fa-phone" aria-hidden="true"></i>
+                   </span>
+                   <span class= "main-footer-col1-contact-content-details">
+                     +91 8986756478
+                   </span>
+               </div>
+               <div class = "main-footer-col1-contact-content-row">
+                   <span class= "main-footer-col1-contact-content-icon">
+                      <i class="fa fa-envelope"></i>
+                   </span>
+                   <span class= "main-footer-col1-contact-content-details">
+                      support@dillimate.com
+                   </span>
+               </div> 
+            </div>           
+          </div>
+        </div>
+        <div class = "main-footer-col2 grid-item">
+          <div class = "main-footer-col2-heading">
+            Information
+          </div>
+          <div class = "main-footer-col2-content">
+            <div class = "main-footer-col2-subcontent">About Us</div>
+            <div class = "main-footer-col2-subcontent">More Search</div>
+            <div class = "main-footer-col2-subcontent">Blog</div>
+            <div class = "main-footer-col2-subcontent">Testimonials</div>
+            <div class = "main-footer-col2-subcontent">Events</div>
+          </div>
+        </div>
+        <div class = "main-footer-col3 grid-item">
+          <div class = "main-footer-col3-heading">
+            Helpful Links
+          </div>
+          <div class = "main-footer-col3-content">
+            <div class = "main-footer-col3-subcontent">Services</div>
+            <div class = "main-footer-col3-subcontent">Supports</div>
+            <div class = "main-footer-col3-subcontent">Terms & Condition</div>
+            <div class = "main-footer-col3-subcontent">Privacy Policy</div>
+          </div>
+        </div>
+        <div class = "main-footer-col4 grid-item">
+          <div class = "main-footer-col4-heading">
+            Subscribe More Info
+          </div>
+          <div class = "main-footer-col4-form">
+            <form action = "#">
+              <div class = "main-footer-col4-form-row">
+                <input 
+                  type = "email" 
+                  name = "subscribe" 
+                  id = "subscribe" 
+                  placeholder= "Enter your Email"/>
+              </div>
+              <div class = "main-footer-col4-form-row">
+                <button type = "submit" id = "submitSubscribeForm">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER MIDDLE PART -->
+      <div class = "main-footer-middle-line">
+      </div>
+
+      <!-- FOOTER BOTTOM PART -->
+      <div class = "main-footer-bottom">
+        <div class = "main-footer-bottom-content left-panel">
+          <div class = "social-icon-background">
+            <span class = "social-icon">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class = "social-icon-background">
+            <span class = "social-icon">
+              <i class="fa fa-google" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class = "social-icon-background">
+            <span class = "social-icon">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class = "social-icon-background">
+            <span class = "social-icon">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class = "main-footer-bottom-content">
+          <div class = "content-details">
+            2018 <i class="fa fa-at" aria-hidden="true"></i> company.Ltd. All Right Reserved.
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </body>
+</html>

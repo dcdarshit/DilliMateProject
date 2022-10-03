@@ -1,0 +1,12 @@
+.contact-main-item {
+    height: 500px;
+    width: 100%;
+}
+
+.contact-content { 
+    text-align: center;
+}
+
+.contact-content h1 {
+    padding-top: 10px;
+}

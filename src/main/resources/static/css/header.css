@@ -1,0 +1,76 @@
+#main-header{
+    position: static;
+    width: 100%; 
+    height: 60px;
+    background-color: #000;
+ }
+ 
+ .header-container{
+    display: grid;
+    grid-template-columns: 7% 33% 60%;
+ }
+ 
+ .heading {
+     color: #fff;
+     font-size: 30px;
+     font-weight: bold;
+     font-style: normal;
+     margin-top: 5px;
+     float: left;
+ }
+ 
+ .header-links{
+     margin-top: 15px;
+     text-align: center;
+ }
+ 
+ .header-links a{
+     color: #fff;
+     text-decoration: none;
+     font-size: 20px;
+     font-weight: 500;
+     font-style: normal;
+     padding-left: 20px; 
+     padding-right: 20px;   
+ }
+ 
+ .admin-dashboard-header-links {
+    margin-top: 15px;
+    margin-left: 700px;
+ }
+ 
+ .admin-dashboard-header-links a {
+    color: #fff;
+     text-decoration: none;
+     font-size: 20px;
+     font-weight: 500;
+     font-style: normal;
+     padding-left: 20px;
+     padding-right: 20px;
+ }
+ 
+ .admin-dashboard-header-links a:hover {
+     background-color: orange;
+     padding-top: 15px;
+     padding-bottom: 16px;
+ }
+ 
+ .header-links a:hover {
+     background-color: orange;
+     padding-top: 15px;
+     padding-bottom: 15px;
+ }
+ 
+ .active-links {
+    background-color: orange;
+    padding-top: 15px;
+    padding-bottom: 15px;
+ }
+
+ .main-logo {
+    float:right; 
+    height: 60px;
+    width: 60px;
+ }
+ 
+ 

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+    <head>
+        <link
+           rel="stylesheet"
+           th:href="@{https://fonts.googleapis.com/css?family=Poppins}"
+        />
+        <link 
+           rel="stylesheet" 
+           type="text/css" 
+           th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+        />
+        <link rel="stylesheet" type="text/css" th:href= "@{/css/dashboard.css}" />
+        <link rel="stylesheet" type="text/css" th:href= "@{/css/header.css}"/>
+        <link rel = "stylesheet" type = "text/css" th:href = "@{/css/carousel1.css}"/> 
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header id = "main-header" th:insert="dashboardHeader::header2"></header>
+
+        <!-- BODY -->
+        <section id = "main-body-content">
+           
+           <!-- DASHBOARD SIDEBAR -->
+           <div class = "grid-item main-body-left-panel">
+             <div class = "user-profile">
+               <img th:src="@{${'/profile/display/' + id}}" class = "profile-pic"/>
+               <!--<img th:src = "@{/img/profilePic.jpg}" class = "profile-pic"/>-->
+             </div>
+             
+             <div class = "user-profile-name">
+                <span sec:authentication="principal.username">Johnson Stuwart</span></div>
+             <!-- <div class = "user-profile-address">johnstuwart@gmail.com</div>-->
+           </div>
+           
+           <div class = "grid-item main-body-right-panel">
+             <h1 class = "right-panel-heading">User Dashboard</h1><hr>
+             
+             <div class = "welcome-page">             
+               <h2 align = "center">Museum Details</h2>
+               
+               <div class = "details-margin">
+                 <div style = "margin: 0px 50px 0px 50px">
+                   <ul class="gallery">
+	                 <li>
+	                   <img th:src="@{${'/museum/display/' + museum.museumId + '/1'}}" class = "image-size" />
+	                 </li>
+	                 <li>
+	                   <img th:src="@{${'/museum/display/' + museum.museumId + '/2'}}" class = "image-size" />
+	                 </li>
+	                 <li>
+	                   <img th:src="@{${'/museum/display/' + museum.museumId + '/3'}}" class = "image-size" />
+	                 </li>
+	                 <li>
+	                   <img th:src="@{${'/museum/display/' + museum.museumId + '/4'}}" class = "image-size" />
+	                 </li>
+	                 <li>
+	                   <img th:src="@{${'/museum/display/' + museum.museumId + '/5'}}" class = "image-size" />
+	                 </li>
+	                 <li>
+	                   <img th:src="@{${'/museum/display/' + museum.museumId + '/6'}}" class = "image-size" />
+	                 </li>
+                   </ul>     
+                 </div>
+                 
+                 <table class="table table-bordered">
+                  <tr>
+                    <td><b>Museum Id</b></td> 
+                    <td th:text = "${museum.museumId}">001</td>                   
+                  </tr>
+                  <tr>
+                    <td><b>Museum Name</b></td> 
+                    <td th:text = "${museum.museumName}">Museum</td>                   
+                  </tr>
+                  <tr>
+                    <td><b>About</b></td> 
+                    <td th:text = "${museum.about}">about</td>                   
+                  </tr>
+                  <tr>
+                    <td><b>Address</b></td> 
+                    <td th:text = "${museum.address}">address</td>                   
+                  </tr>
+                  <tr>
+                    <td><b>Opening Time</b></td> 
+                    <td th:text = "${museum.openingTime}">10:15</td>                   
+                  </tr>
+                  <tr>
+                    <td><b>Closing Time</b></td> 
+                    <td th:text = "${museum.closingTime}">18:00</td>                   
+                  </tr>
+                  <tr>
+                    <td><b>Ticket Charges</b></td> 
+                    <td th:text = "${museum.ticketCharges}">700</td>                   
+                  </tr>
+                 </table>
+               </div>
+
+               <div class = "add-new-btn">
+                 <a th:href= "@{${'/dashboard/show/museumList/' + role + '/' + id}}" 
+                    class="btn btn-primary add-new-museum">
+                    Back
+                 </a>
+               </div>
+              
+             </div>             
+           </div>  
+           
+        </section>
+
+        <!-- FOOTER -->
+        <footer id = "main-footer"></footer>
+        
+        <!-- JAVASCRIPT FILES -->
+        <script type="text/javascript" th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+        <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>       
+    
+        <!-- SCRIPT FILES -->
+        <script type = "text/javascript" th:src = "@{/js/carousel1.js}"></script>
+
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <title>Dashboard header</title>
+</head>
+<body>
+    <!-- HEADER CONTENT -->
+    <div class="header-container" th:fragment="header2">
+        <!-- HEADER HEADING -->
+        <div class = "grid-item">
+          <img th:src = "@{/img/logo.png}" class = "main-logo">
+        </div>
+        <div class="heading grid-item">Dillimate</div>
+        <!-- PAGES LINKS -->
+        <div class="header-links grid-item">
+            <a th:href = "@{${'/dashboard/show/locations/' + role + '/'  + id}}">Location</a>
+            <a th:href = "@{${'/dashboard/show/food/' + role + '/' + id}}">Food</a>
+            <a th:href = "@{${'/dashboard/show/hotelList/' + role + '/' + id}}">Hotel</a>
+            <a th:href = "@{${'/dashboard/show/clinicList/' + role + '/' +  id}}">Health</a>
+            <a th:href = "@{${'/dashboard/show/cabList/' + role + '/' + id}}">Cab</a>
+            <a th:href = "@{${'/dashboard/show/guideList/' + role + '/' + id}}">Guide</a> 
+            <a th:href = "@{/logout}">Logout</a>           
+        </div>
+    </div>
+</body>
+</html>
